@@ -27,9 +27,9 @@ for entry in "${aliases[@]}" ; do
       host_name=${entry_array[1]}
 
       # check if we need to replace our old line
-      if grep -q "${host_name}" ${hosts_file}; then
+      if grep -Eq "^.*[[:space:]]+${host_name}[[:space:]]*$" ${hosts_file}; then
          echo -e "${YELLOW}${host_name} already, exists. Replacing it${NC}"
-         sed -i '' "s/.*${host_name}.*/${entry}/" ${hosts_file}
+         sed -i '' "s/^.*\s+${host_name}\s*$/${entry}/" ${hosts_file}
       else
          echo -e "${GREEN}Adding ${host_name} to ${hosts_file}${NC}"
          echo ${entry} >> ${hosts_file}
