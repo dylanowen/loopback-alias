@@ -10,5 +10,11 @@
     <array>
       <string>{install_location}/loopback_alias.sh</string>
     </array>
+    <key>StandardOutPath</key>
+    <string>{install_location}/stdout.log</string>
+    <key>StandardErrorPath</key>
+    <string>{install_location}/stderr.log</string>
+    <key>Debug</key>
+    <false/>
 </dict>
 </plist>

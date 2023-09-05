@@ -1,2 +1,5 @@
 config.sh
 hosts.backup
+
+stdout.log
+stderr.log
